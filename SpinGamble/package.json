@@ -1,0 +1,14 @@
+{
+  "name": "spingamble",
+  "version": "1.0.0",
+  "description": "Spin Gamble Game",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
