@@ -92,7 +92,8 @@ const spin = () => {
       reels[i].push(selectedSymbol)
       reelSymbols.splice(randomIndex, 1)
     }
-  } return reels
+  } 
+  return reels
 }
 
 const transpose = (reels) => {
@@ -103,7 +104,8 @@ const transpose = (reels) => {
     for (let j = 0; j < columns; j++) {
       tRows[i].push(reels[j][i])
     }
-  } return tRows
+  } 
+  return tRows
 }
 
 const printSlots = (tRows) => {
@@ -136,7 +138,13 @@ const getWin = (rows, bet, lines) => {
     if (allSame) {
       win += bet * symbolValues[symbols[0]]
     }
-  } return win
+  } 
+  if (win > 0) {
+    console.log("You won $" + win + '\n' + "Your bet was $" + bet * lines + '\n' + "Your net win is $" + (win - (bet * lines)))
+  } else {
+    console.log("You lost $" + bet * lines)
+  }
+  return win
 }
 
 const game = () => {
@@ -152,7 +160,6 @@ const game = () => {
     printSlots(tRows)
     const winnings = getWin(tRows, bet, lines)
     balance += winnings
-    console.log("You won, $" + winnings.toString()) 
 
     if (balance <= 3) {
       console.log("Balance is not enough to play :(")
